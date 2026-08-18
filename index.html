@@ -179,39 +179,37 @@
     align-items:center;
     gap:16px;
     width:100%;
-    padding:16px 20px;
+    padding:14px 18px;
     background:var(--zm-card);
-    border:2px dashed var(--zm-blue);
-    border-radius:var(--zm-radius);
+    border:1px solid #e3f1fc;
+    border-radius:16px;
     text-decoration:none;
     color:var(--zm-ink);
-    box-shadow:0 8px 20px rgba(2,50,90,0.07);
-    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    box-shadow:0 4px 14px rgba(2,50,90,0.06);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
-  .stamp-link:nth-child(2){ transform:rotate(-0.6deg); }
-  .stamp-link:nth-child(3){ transform:rotate(0.5deg); }
 
   .stamp-link:hover{
-    transform:translateY(-3px) rotate(0deg);
-    box-shadow:0 14px 30px rgba(2,178,254,0.22);
-    border-color:var(--zm-blue-deep);
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(2,178,254,0.16);
+    border-color:var(--zm-blue);
   }
 
   .stamp-flag{
     flex-shrink:0;
-    width:52px; height:52px;
-    border-radius:14px;
-    background:var(--zm-bg);
+    width:56px; height:56px;
+    border-radius:12px;
+    background:#ffffff;
     display:flex; align-items:center; justify-content:center;
-    font-size:24px;
-    border:1px solid #dff1ff;
+    border:1px solid #e3f1fc;
     overflow:hidden;
+    padding:6px;
   }
   .stamp-flag img{
     width:100%; height:100%;
-    object-fit:cover;
-    object-position:center;
+    object-fit:contain;
   }
+  .stamp-flag svg{ width:30px; height:30px; }
 
   .stamp-copy{ flex:1; min-width:0; }
   .stamp-eyebrow{
@@ -359,7 +357,13 @@
     </a>
 
     <a class="stamp-link" href="https://zaylomart.wed2c.com/" target="_blank" rel="noopener" onclick="gtag('event','click',{'link_name':'Worldwide Store'});">
-      <span class="stamp-flag">🌍</span>
+      <span class="stamp-flag" style="background:linear-gradient(135deg, var(--zm-blue), var(--zm-blue-deep)); border-color:var(--zm-blue-deep);">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.6"/>
+          <ellipse cx="12" cy="12" rx="4" ry="9" stroke="#fff" stroke-width="1.6"/>
+          <path d="M3 12h18M4.5 7.5h15M4.5 16.5h15" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
       <span class="stamp-copy">
         <span class="stamp-eyebrow">Ships Worldwide</span>
         <span class="stamp-title">Shop Worldwide</span>
