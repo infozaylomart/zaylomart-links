@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaylomart — Shop UAE, Pakistan & Worldwide</title>
+<meta name="description" content="Shop Zaylomart in the UAE, Pakistan, or worldwide. Follow us on TikTok, Instagram, Facebook & YouTube.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     GOOGLE ANALYTICS 4
+     Replace G-XXXXXXXXXX below with your real GA4 Measurement ID
+     (Get one free at analytics.google.com > Admin > Data Streams)
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-10KPTFSJ3E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-10KPTFSJ3E');
+</script>
+
+<style>
+  :root{
+    --zm-bg: #eaf6ff;
+    --zm-bg-2: #dcf0ff;
+    --zm-card: #ffffff;
+    --zm-ink: #0a2540;
+    --zm-ink-soft: #4b6178;
+    --zm-blue: #02b2fe;
+    --zm-blue-deep: #0186c7;
+    --zm-gold: #ffb703;
+    --zm-green: #16a34a;
+    --zm-radius: 20px;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:'Inter', sans-serif;
+    color:var(--zm-ink);
+    background:
+      radial-gradient(circle at 15% 0%, var(--zm-bg-2) 0%, transparent 45%),
+      radial-gradient(circle at 85% 15%, #d7f4ff 0%, transparent 40%),
+      var(--zm-bg);
+    display:flex;
+    justify-content:center;
+    padding: 48px 16px 80px;
+  }
+
+  /* faint dotted flight-route line running down the page, tying the three destinations together */
+  body::before{
+    content:"";
+    position:fixed;
+    top:0; bottom:0; left:50%;
+    width:2px;
+    transform:translateX(-50%);
+    background-image: repeating-linear-gradient(to bottom, var(--zm-blue) 0 6px, transparent 6px 14px);
+    opacity:0.12;
+    z-index:0;
+  }
+
+  .page{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:420px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  /* ---------- Header ---------- */
+  .brand-mark{
+    width:64px; height:64px;
+    border-radius:18px;
+    background:linear-gradient(135deg, var(--zm-blue), var(--zm-blue-deep));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px rgba(2,178,254,0.35);
+    margin-bottom:16px;
+  }
+  .brand-mark svg{ width:34px; height:34px; }
+
+  h1.brand-name{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size:28px;
+    letter-spacing:-0.02em;
+    margin:0 0 6px;
+    color:var(--zm-ink);
+  }
+
+  .brand-tagline{
+    font-size:14px;
+    color:var(--zm-ink-soft);
+    text-align:center;
+    margin:0 0 20px;
+    max-width:280px;
+    line-height:1.5;
+  }
+
+  .badge-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin-bottom:34px;
+  }
+
+  /* ---------- Google rating badge ---------- */
+  .google-rating-badge{
+    display:flex; align-items:center; gap:10px;
+    padding:9px 16px 9px 10px;
+    border-radius:14px;
+    background:var(--zm-card);
+    border:1px solid #e6f4ff;
+    box-shadow:0 4px 16px rgba(2,50,90,0.08);
+  }
+  .g-icon{
+    flex-shrink:0; width:32px; height:32px; border-radius:50%;
+    background:#f8f9fa; display:flex; align-items:center; justify-content:center;
+    border:1px solid #eee;
+  }
+  .g-content{ display:flex; flex-direction:column; gap:2px; }
+  .g-top-row{ display:flex; align-items:center; gap:6px; }
+  .rating-word{ font-size:13px; font-weight:700; color:var(--zm-ink); }
+  .stars{ font-size:12px; letter-spacing:1px; color:var(--zm-gold); }
+  .rating-text{ font-size:11px; color:var(--zm-ink-soft); white-space:nowrap; }
+  .rating-text strong{ color:var(--zm-ink); }
+
+  /* ---------- Happy customers badge ---------- */
+  .happy-customers-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:linear-gradient(135deg, var(--zm-blue), var(--zm-blue-deep));
+    color:#fff; padding:9px 16px; border-radius:14px;
+    box-shadow:0 6px 18px rgba(2,178,254,0.3);
+  }
+  .hc-avatars{ position:relative; display:flex; align-items:center; }
+  .hc-avatars img{
+    width:26px; height:26px; border-radius:50%; object-fit:cover;
+    border:2px solid #fff; margin-left:-8px; background:#fff;
+  }
+  .hc-avatars img:first-child{ margin-left:0; }
+  .hc-text{ display:flex; flex-direction:column; gap:1px; }
+  .hc-count{ font-size:13px; font-weight:700; white-space:nowrap; }
+  .hc-sub{ font-size:10.5px; color:#eaf9ff; white-space:nowrap; }
+
+  /* ---------- Section label ---------- */
+  .section-label{
+    align-self:flex-start;
+    font-family:'Sora', sans-serif;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--zm-blue-deep);
+    margin:0 0 14px 4px;
+  }
+
+  /* ---------- Passport-stamp store links ---------- */
+  .stamps{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    width:100%;
+    margin-bottom:38px;
+  }
+
+  .stamp-link{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    width:100%;
+    padding:16px 20px;
+    background:var(--zm-card);
+    border:2px dashed var(--zm-blue);
+    border-radius:var(--zm-radius);
+    text-decoration:none;
+    color:var(--zm-ink);
+    box-shadow:0 8px 20px rgba(2,50,90,0.07);
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .stamp-link:nth-child(2){ transform:rotate(-0.6deg); }
+  .stamp-link:nth-child(3){ transform:rotate(0.5deg); }
+
+  .stamp-link:hover{
+    transform:translateY(-3px) rotate(0deg);
+    box-shadow:0 14px 30px rgba(2,178,254,0.22);
+    border-color:var(--zm-blue-deep);
+  }
+
+  .stamp-flag{
+    flex-shrink:0;
+    width:52px; height:52px;
+    border-radius:50%;
+    background:var(--zm-bg);
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px;
+    border:1px solid #dff1ff;
+  }
+
+  .stamp-copy{ flex:1; min-width:0; }
+  .stamp-eyebrow{
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--zm-blue-deep);
+    margin:0 0 2px;
+  }
+  .stamp-title{
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    margin:0 0 2px;
+    color:var(--zm-ink);
+  }
+  .stamp-url{
+    font-size:12.5px;
+    color:var(--zm-ink-soft);
+    margin:0;
+  }
+
+  .stamp-arrow{
+    flex-shrink:0;
+    width:32px; height:32px;
+    border-radius:50%;
+    background:var(--zm-blue);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff;
+  }
+  .stamp-arrow svg{ width:16px; height:16px; }
+
+  /* ---------- Socials ---------- */
+  .social-row{
+    display:flex;
+    gap:14px;
+    margin-bottom:8px;
+  }
+  .social-link{
+    width:46px; height:46px;
+    border-radius:50%;
+    background:var(--zm-card);
+    border:1px solid #e0f0fc;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--zm-ink);
+    box-shadow:0 6px 16px rgba(2,50,90,0.08);
+    transition:transform .2s ease, background .2s ease, color .2s ease;
+    text-decoration:none;
+  }
+  .social-link svg{ width:20px; height:20px; }
+  .social-link:hover{
+    transform:translateY(-3px);
+    background:var(--zm-blue);
+    color:#fff;
+  }
+
+  footer{
+    margin-top:34px;
+    font-size:11.5px;
+    color:var(--zm-ink-soft);
+    text-align:center;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .stamp-link, .social-link{ transition:none; }
+  }
+
+  @media (max-width:380px){
+    h1.brand-name{ font-size:24px; }
+    .stamp-title{ font-size:15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="brand-mark">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 8h16l-1.5 10.5a2 2 0 0 1-2 1.5H7.5a2 2 0 0 1-2-1.5L4 8Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <h1 class="brand-name">Zaylomart</h1>
+  <p class="brand-tagline">Quality finds, shipped to you — pick your storefront below.</p>
+
+  <div class="badge-row">
+    <div class="google-rating-badge">
+      <div class="g-icon">
+        <svg viewBox="0 0 48 48" width="18" height="18">
+          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/>
+          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        </svg>
+      </div>
+      <div class="g-content">
+        <div class="g-top-row">
+          <span class="rating-word">Excellent</span>
+          <span class="stars">★★★★★</span>
+        </div>
+        <span class="rating-text"><strong>4.9</strong>/5 · <strong>860+</strong> reviews</span>
+      </div>
+    </div>
+
+    <div class="happy-customers-badge">
+      <div class="hc-avatars">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=faces&fit=crop&w=100&h=100" alt="">
+        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=faces&fit=crop&w=100&h=100" alt="">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=faces&fit=crop&w=100&h=100" alt="">
+      </div>
+      <div class="hc-text">
+        <span class="hc-count">3,847+ customers</span>
+        <span class="hc-sub">shopping happily</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Store links -->
+  <span class="section-label">Choose your store</span>
+  <div class="stamps">
+
+    <a class="stamp-link" href="https://zaylomart.com" target="_blank" rel="noopener" onclick="gtag('event','click',{'link_name':'UAE Store'});">
+      <span class="stamp-flag">🇦🇪</span>
+      <span class="stamp-copy">
+        <span class="stamp-eyebrow">UAE Store</span>
+        <span class="stamp-title">Shop in the UAE</span>
+        <span class="stamp-url">zaylomart.com</span>
+      </span>
+      <span class="stamp-arrow">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <a class="stamp-link" href="https://zaylomart.online" target="_blank" rel="noopener" onclick="gtag('event','click',{'link_name':'Pakistan Store'});">
+      <span class="stamp-flag">🇵🇰</span>
+      <span class="stamp-copy">
+        <span class="stamp-eyebrow">Pakistan Store</span>
+        <span class="stamp-title">Shop in Pakistan</span>
+        <span class="stamp-url">zaylomart.online</span>
+      </span>
+      <span class="stamp-arrow">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <a class="stamp-link" href="https://zaylomart.wed2c.com/" target="_blank" rel="noopener" onclick="gtag('event','click',{'link_name':'Worldwide Store'});">
+      <span class="stamp-flag">🌍</span>
+      <span class="stamp-copy">
+        <span class="stamp-eyebrow">Ships Worldwide</span>
+        <span class="stamp-title">Shop Worldwide</span>
+        <span class="stamp-url">zaylomart.wed2c.com</span>
+      </span>
+      <span class="stamp-arrow">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+  </div>
+
+  <!-- Socials -->
+  <span class="section-label">Follow us</span>
+  <div class="social-row">
+    <a class="social-link" href="https://www.tiktok.com/@zaylomart" target="_blank" rel="noopener" aria-label="TikTok" onclick="gtag('event','click',{'link_name':'TikTok'});">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-3.75-4.15h-3.4v14.4a2.6 2.6 0 1 1-2.19-2.57v-3.44a5.99 5.99 0 1 0 5.59 5.98V9.4a7.65 7.65 0 0 0 4.15 1.22V7.2a4.27 4.27 0 0 1-.4-1.38Z"/></svg>
+    </a>
+    <a class="social-link" href="https://instagram.com/zaylomart" target="_blank" rel="noopener" aria-label="Instagram" onclick="gtag('event','click',{'link_name':'Instagram'});">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>
+    </a>
+    <a class="social-link" href="https://facebook.com/zaylomart" target="_blank" rel="noopener" aria-label="Facebook" onclick="gtag('event','click',{'link_name':'Facebook'});">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.2h2.4l.36-2.8h-2.76V9.1c0-.81.22-1.36 1.4-1.36h1.5V5.2c-.26-.03-1.15-.11-2.18-.11-2.16 0-3.64 1.32-3.64 3.74v2.09H8.2v2.8h2.38V21h2.92Z"/></svg>
+    </a>
+    <a class="social-link" href="https://youtube.com/@zaylomart" target="_blank" rel="noopener" aria-label="YouTube" onclick="gtag('event','click',{'link_name':'YouTube'});">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 9.5v5l4.5-2.5-4.5-2.5Z" fill="currentColor"/></svg>
+    </a>
+  </div>
+
+  <footer>&copy; 2026 Zaylomart. All rights reserved.</footer>
+
+</div>
+
+<script>
+  // Fires a GA4 "page_view" automatically (handled by gtag config above).
+  // Each store/social link above also fires its own 'click' event with a link_name
+  // parameter, so under GA4 > Reports > Engagement > Events you can see exactly
+  // which link people tap most.
+</script>
+
+</body>
+</html>
